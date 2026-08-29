@@ -2,10 +2,8 @@ class Solution {
 public:
     vector<int> buildArray(vector<int>& nums) {
         vector<int> v;
-        int i=0;
-        while(i!=nums.size()){
+        for(int i=0;i<nums.size();i++){
             v.push_back(nums[nums[i]]);
-            i+=1;
         }
         return v;
     }
