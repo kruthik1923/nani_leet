@@ -3,12 +3,7 @@ public:
     int reverseDegree(string s) {
         int sum=0;
         for(int i=0;i<s.length();i++){
-            if(i==0){
-                    sum=sum+('z'-s[i]+1);
-            }
-            else{
             sum=sum+((i+1)*('z'-s[i]+1));
-            }
         }
         return sum;
     }
