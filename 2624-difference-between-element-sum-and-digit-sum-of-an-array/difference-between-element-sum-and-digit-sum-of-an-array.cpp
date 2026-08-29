@@ -1,17 +1,18 @@
 class Solution {
 public:
     int differenceOfSum(vector<int>& nums) {
-
-        int ans=0,elem=0,dig=0;
-        string s="";
-    
+        int x=0;
         for(int i=0;i<nums.size();i++){
-            elem+=nums[i];
-            s+=to_string(nums[i]);
+            x+=nums[i];
         }
-        for(int i=0;i<s.length();i++){
-            dig+= s[i]-'0';
+        int y=0;
+        for(int i=0;i<nums.size();i++){
+            while(nums[i]){
+                y+=nums[i]%10;
+                nums[i]=nums[i]/10;
+            }
+            
         }
-        return abs(elem-dig);
+        return abs(x-y);
     }
 };
