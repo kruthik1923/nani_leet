@@ -1,31 +1,32 @@
 class Solution {
 public:
-    int check(int n){
-        int num=n,nod=0;
-        vector<int> v;
-        int now=0;
-        while(num!=0){
-            nod++;
-            v.push_back(num%10);
-            num/=10;
-        }
-        for(int i=0;i+1<v.size();i++){
-            if(i!=0 && i!=v.size()-1){
-                if(v[i]>v[i-1] && v[i]>v[i+1]){
-                    now++;
-                }
-                 if(v[i]<v[i-1] && v[i]<v[i+1]){
-                    now++;
-                }
-            }
-        }
-        return now;
-    }
     int totalWaviness(int num1, int num2) {
-        int p=0,v=0,total=0;
-        for(int i=num1;i<=num2;i++){
-           total+=check(i);
+        int waviness=0;
+        while(num1<=num2){
+        if(num1/100==0){
+            num1++;
+            continue;
         }
-        return total;
+        int otemp=num1;
+        bool turn=false;
+        int k=1;
+        while(otemp>0){
+            int temp=otemp/k;
+        if(temp>0){
+            int next=temp%10;
+            temp/=10;
+            if(temp==0)break;
+            int mid=temp%10;
+            temp/=10;
+            if(temp==0)break;
+            int prev=temp%10;
+            temp/=10;
+            if(mid>prev && mid>next|| mid<prev && mid<next)waviness++;
+        }
+        k*=10;
+        }
+        num1++;
+        }
+        return waviness;
     }
 };
