@@ -14,10 +14,10 @@ public:
                 break;
             }
         }
-        sort(nums.begin()+a,nums.end());
+        sort(nums.begin(),nums.end());
         while(true){
             flag=0;
-            for(int i=a;i<nums.size();i++){
+            for(int i=0;i<nums.size();i++){
                 if(psum==nums[i]){
                     psum++;
                     flag=1;
