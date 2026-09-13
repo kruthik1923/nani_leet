@@ -20,7 +20,8 @@ public:
                 }
             }
         }
-      return (lq + rq) % 2 == 1 ||
-       2 * (ls - rs) != 9 * (rq - lq);
+       if((lq + rq)%2==1){return true;}
+       if(2*(ls-rs) == 9*(rq-lq)){return false;}
+       return true;
     }
 };
