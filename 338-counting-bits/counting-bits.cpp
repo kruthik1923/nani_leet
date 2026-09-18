@@ -1,17 +1,18 @@
 class Solution {
 public:
-    int bin(int n){
-        int p=0;
-        while(n!=0){
-            if(n%2==1){p++;}
-            n/=2;
-        }
-        return p;
-    }
+ 
     vector<int> countBits(int n) {
         vector<int> v;
-        for(int i=0;i<=n;i++){
-            v.push_back(bin(i));
+        int p=0,c=0;
+        v.push_back(0);
+        for(int i=1;i<=n;i++){
+            p=0;
+            c=i;
+            while(c!=0){
+                if(c%2==1){p++;}
+                c/=2;
+            }
+            v.push_back(p);
         }
         return v;
     }
