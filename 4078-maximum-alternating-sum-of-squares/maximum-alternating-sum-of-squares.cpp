@@ -4,10 +4,12 @@ public:
         vector<long long> sum,diff;
         int n=nums.size();
         long long ans=0;
-        sort(nums.begin(), nums.end(), [](int a, int b){
-            return abs(a) < abs(b); 
-        });
-
+        for(int i=0;i<n;i++){
+            if(nums[i]<0){
+                nums[i]=nums[i]*(-1);
+            }
+        }
+        sort(nums.begin(), nums.end());
         for(int i=0;i<n/2;i++){
             diff.push_back(1LL*nums[i]*nums[i]);
         }
