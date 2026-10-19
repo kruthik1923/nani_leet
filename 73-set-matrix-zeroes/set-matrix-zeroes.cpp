@@ -13,6 +13,10 @@ public:
                 }
             }
         }
+        sort(a.begin(),a.end());
+        sort(b.begin(),b.end());
+        a.erase(unique(a.begin(),a.end()),a.end());
+        b.erase(unique(b.begin(),b.end()),b.end());
         for(int x=0;x<a.size();x++){
             int p=0;
             int z=a[x];
